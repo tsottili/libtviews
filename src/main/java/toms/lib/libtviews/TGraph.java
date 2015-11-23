@@ -21,8 +21,6 @@ import toms.lib.tviews.R;
  */
 public class TGraph extends View {
 
-    protected boolean mbDrawLine;
-
     // Print axes origin
     protected boolean mbPrintOrigin;
 
@@ -76,7 +74,6 @@ public class TGraph extends View {
                 0, 0);
 
         try {
-            mbDrawLine = a.getBoolean(R.styleable.TGraph_Line, false);
 
             mAxisX = a.getFloat(R.styleable.TGraph_XAxis, 0.0f);
             mAxisY = a.getFloat(R.styleable.TGraph_YAxis,0.0f);
@@ -282,7 +279,7 @@ public class TGraph extends View {
                     mGridPath.lineTo(mWidth, dv);
                 }
 
-                for (float dy = 0; dy < mXPositiveLimit; dy = dy + mGridYWidth) {
+                for (float dy = 0; dy < mYPositiveLimit; dy = dy + mGridYWidth) {
                     float dv = Y2V(dy);
                     mGridPath.moveTo(0f, dv);
                     mGridPath.lineTo(mWidth, dv);
