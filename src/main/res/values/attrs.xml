@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="TGraph">
         <attr name="PrintOrigin" format="boolean"/>
-        <attr name="Line" format="boolean" />
+        <attr name="Line" format="integer" />
         <attr name="XAxis" format="float" />
         <attr name="YAxis" format="float" />
         <attr name="XNegativeLimit" format="float" />

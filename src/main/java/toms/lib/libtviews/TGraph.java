@@ -47,6 +47,9 @@ public class TGraph extends View {
     protected float mAxisX = 0;     // x value for drawing axis
     protected float mAxisY = 0;     // y value for drawing axis
 
+    // axis stroke size
+    protected int mAxisStroke = 1;
+
     // UV coodidate value for drawing axis.
     protected float mAxisU = 0;
     protected float mAxisV = 0;
@@ -85,6 +88,8 @@ public class TGraph extends View {
             mbPrintOrigin = a.getBoolean(R.styleable.TGraph_PrintOrigin, false);
             mGridXWidth = a.getFloat(R.styleable.TGraph_GridXInterval, 0);
             mGridYWidth = a.getFloat(R.styleable.TGraph_GridYInterval, 0);
+
+            mAxisStroke = a.getInt(R.styleable.TGraph_Line,1);
 
         } finally {
             a.recycle();
@@ -156,6 +161,7 @@ public class TGraph extends View {
     protected void initPaints() {
         mAxisPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mAxisPaint.setColor(Color.BLACK);
+        mAxisPaint.setStrokeWidth(mAxisStroke);
 
         mGraphPaint= new Paint(Paint.ANTI_ALIAS_FLAG);
         mGraphPaint.setColor(Color.BLUE);
